@@ -1,4 +1,5 @@
 ﻿using Adventure.Rooms;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,7 @@ namespace Adventure.Commands
     {
         public override void Execute(World world, params string[] @params)
         {
-            Console.WriteLine($"You looked around and see a {world.CurrentRoom.Description}");
-            if (world.CurrentRoom.Items.Count > 0) 
-            {
-
-                Console.WriteLine("Items");
-                
-                Console.ForegroundColor = ConsoleColor.Green; 
-                
-                Console.WriteLine(string.Join(",",world.CurrentRoom.Items.Select(i=> i.Name)));
-
-                Console.ResetColor();
-            
-            
-            }
+            AnsiConsole.MarkupLine($"You looked around and see a [green]{world.CurrentRoom.Description}[/]");
         }
     }
 }

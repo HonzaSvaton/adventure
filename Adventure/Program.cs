@@ -1,44 +1,29 @@
-﻿using Adventure.Commands;
+﻿using Adventure;
+using Adventure.Commands;
+using Spectre.Console;
 
-namespace Adventure
+var world = new World();
+var commands = new Dictionary<string, BaseCommand>()
 {
-    internal class Program
-    {
-        private static void Main(string[] args)
-        {
-            var world = new World();
-            var commands = RegisterCommands();
+    { "look", new LookAroundCommand() },
 
-            Console.WriteLine(world.Intro);
+    { "help", new HelpCommand() },
+    { "quit", new QuitCommand() }
+};
 
-            while (true)
-            {
-                Console.Write("-> ");
-                var commandText = Console.ReadLine();
+AnsiConsole.MarkupLine(world.Intro);
 
-                if (commandText == "quit")
-                {
-                    break;
-                }
+while (true)
+{
+    var commandChoice = AnsiConsole.Prompt(
+        new TextPrompt<string>("What do you want to do?")
+            .DefaultValue("help"));
 
-                if (!string.IsNullOrEmpty(commandText))
-                {
-                    var parsedCommandText = commandText.Trim().Split(" ");
-                    var command = commands.GetValueOrDefault(parsedCommandText[0]) ?? commands["help"];
-                    command.Execute(world, parsedCommandText.Skip(1).ToArray());
-                }
-            }
-        }
+    var parsedCommandText = commandChoice.Trim().Split(" ");
+    var command = commands.GetValueOrDefault(parsedCommandText[0]) ?? commands["help"];
+    
+    command.Execute(world, parsedCommandText.Skip(1).ToArray());
 
-        private static Dictionary<string, BaseCommand> RegisterCommands() => new Dictionary<string, BaseCommand>()
-        {
-            { "look", new LookAroundCommand() },
-
-            { "help", new HelpCommand() },
-
-            { "info", new InfoCommand() },
-
-            {"pickup", new PickUp() },
-        };
-    }
+    AnsiConsole.WriteLine();
+    AnsiConsole.WriteLine("----------");
 }

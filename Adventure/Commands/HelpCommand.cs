@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +11,13 @@ namespace Adventure.Commands
     {
         public override void Execute(World world, params string[] @params)
         {
-            Console.WriteLine("To interact with the game, use following commands ...");
-            Console.WriteLine("---");
-            Console.WriteLine("look - looks around the room");
+            AnsiConsole.WriteLine("To interact with the game, use following commands ...");
+            AnsiConsole.WriteLine("---");
+            AnsiConsole.WriteLine("look - looks around the room");
 
-            Console.WriteLine();
-            Console.WriteLine("help - shows this help");
-            Console.WriteLine("quit - exits the game");
+            AnsiConsole.WriteLine();
+            AnsiConsole.WriteLine("help - shows this help");
+            AnsiConsole.WriteLine("quit - exits the game");
         }
     }
 }

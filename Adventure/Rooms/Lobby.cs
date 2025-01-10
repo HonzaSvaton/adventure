@@ -1,5 +1,4 @@
-﻿using Adventure.Items;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +11,5 @@ namespace Adventure.Rooms
         public override string Description => "room";
 
         public override string Name => "Lobby";
-
-        public Lobby()
-        
-        {
-            var rock = new Rock()
-
-            { Pickable = true };
-            
-            
-            Items.Add(rock);
-
-        }
     }
 }
