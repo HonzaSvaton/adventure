@@ -28,5 +28,5 @@ while (true)
     command.Execute(world, parsedCommandText.Skip(1).ToArray());
 
     AnsiConsole.WriteLine();
-    AnsiConsole.WriteLine("----------");
+    AnsiConsole.WriteLine("----------"); // koko
 }
