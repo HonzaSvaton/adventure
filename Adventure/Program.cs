@@ -6,9 +6,12 @@ var world = new World();
 var commands = new Dictionary<string, BaseCommand>()
 {
     { "look", new LookAroundCommand() },
-
     { "help", new HelpCommand() },
-    { "quit", new QuitCommand() }
+    { "quit", new QuitCommand() },
+    { "test", new Test_Command() },
+    { "go", new GoCommand()},
+    {"pickup", new PickupCommand() },
+    {"inventory", new InventoryCommand() },
 };
 
 AnsiConsole.MarkupLine(world.Intro);

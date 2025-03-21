@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Adventure.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,10 @@ namespace Adventure.Rooms
         public override string Name => "Corridor";
 
         public override string Description => "dark and empty corridor";
+
+        public Corridor()
+        {
+            Additem(new Sword());
+        }
     }
 }

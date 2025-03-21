@@ -10,15 +10,22 @@ namespace Adventure
     public class World
     {
         public BaseRoom CurrentRoom { get; private set; }
-
+        public Inventory Inventory { get; } = new();
+        
         public World() 
         {
             var lobby = new Lobby();
             var corridor = new Corridor();
+            var dungeon = new Dungeon();
 
             lobby.RegisterNeighbour(corridor);
+            corridor.RegisterNeighbour(lobby);
 
             CurrentRoom = lobby;
+        }
+        public void SwitchRoom(BaseRoom room)
+        {
+            CurrentRoom = room;
         }
 
         public string Intro { get; } = @"

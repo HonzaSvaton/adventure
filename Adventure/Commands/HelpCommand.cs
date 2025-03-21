@@ -14,10 +14,12 @@ namespace Adventure.Commands
             AnsiConsole.WriteLine("To interact with the game, use following commands ...");
             AnsiConsole.WriteLine("---");
             AnsiConsole.WriteLine("look - looks around the room");
-
-            AnsiConsole.WriteLine();
+            AnsiConsole.WriteLine("go - move to another room");
             AnsiConsole.WriteLine("help - shows this help");
             AnsiConsole.WriteLine("quit - exits the game");
+            AnsiConsole.WriteLine("test - types test in red");
+            AnsiConsole.WriteLine("pickup - picksup an item");
+            AnsiConsole.WriteLine("inventory - you check your inventory");
         }
     }
 }
