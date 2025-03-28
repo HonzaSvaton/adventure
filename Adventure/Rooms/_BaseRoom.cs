@@ -14,6 +14,8 @@ namespace Adventure.Rooms
         public abstract string Name { get; }
         public abstract string Description { get; }
 
+        public abstract bool Locked { get; }
+
         public void RegisterNeighbour(BaseRoom room)
         {
             Neighbours.Add(room);
@@ -30,6 +32,7 @@ namespace Adventure.Rooms
         {
             return Name;
         }
+      
 
 
 

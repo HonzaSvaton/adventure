@@ -23,8 +23,11 @@ namespace Adventure.Commands
                 AnsiConsole.MarkupLine("You have used the right command but chose the wrong room. Please choose again");
                 return;               
             } 
-            world.SwitchRoom(room);
-            AnsiConsole.MarkupLine($"[red]You have entered:{room.Name}[/]");
+           var Open=world.SwitchRoom(room);
+            if (Open)
+            {
+                AnsiConsole.MarkupLine($"[red]You have entered:{room.Name}[/]");
+            }
            
         }    
             

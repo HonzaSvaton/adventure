@@ -23,8 +23,12 @@ namespace Adventure.Commands
                 return;
             }
             world.CurrentRoom.Items.Remove(item);
-            world.Inventory.Additem(item);
-            AnsiConsole.MarkupLine($"[gold1]You have picked up a {item.Name}[/]");
+            var result=world.Inventory.Additem(item);
+            if (result)
+            {
+                AnsiConsole.MarkupLine($"[gold1]You have picked up a {item.Name}[/]");
+            }
+           
          
         }
     }

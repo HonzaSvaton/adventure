@@ -10,5 +10,7 @@ namespace Adventure.Rooms
     {
         public override string Name => "Dungeon";
         public override string Description => "Dark and smelly romm wtih water dripping form the cileing";
+
+        public override bool Locked => false;
     }
 }

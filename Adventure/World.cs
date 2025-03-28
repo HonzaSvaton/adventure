@@ -1,4 +1,5 @@
 ﻿using Adventure.Rooms;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,15 @@ namespace Adventure
 
             CurrentRoom = lobby;
         }
-        public void SwitchRoom(BaseRoom room)
+        public bool SwitchRoom(BaseRoom room)
         {
+            if (room.Locked)
+            {
+                AnsiConsole.MarkupLine($"[red]You can not enter this room[/]");
+                return false;
+            }
             CurrentRoom = room;
+            return true;
         }
 
         public string Intro { get; } = @"

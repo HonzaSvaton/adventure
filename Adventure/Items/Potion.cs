@@ -11,5 +11,8 @@ namespace Adventure.Items
         public override string Name => "Potion";
 
         public override string Description => "Bottle filled with green liquid with acient writing on the bottle";
+
+        public override int Weight => 5;
+
     }
 }
