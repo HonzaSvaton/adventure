@@ -13,7 +13,7 @@ namespace Adventure.Commands
         {
             if (!@params.Any())
             {
-                AnsiConsole.WriteLine("First you have to write where you want to go!!");
+                AnsiConsole.WriteLine("First you have to write where you want to go");
                 return;
             }
 

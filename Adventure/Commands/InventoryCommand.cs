@@ -13,7 +13,7 @@ namespace Adventure.Commands
         {
             if (world.Inventory.Items.Count == 0)
             {
-                AnsiConsole.MarkupLine($"[blue]There is not anything in your inventory[/]");
+                AnsiConsole.MarkupLine($"[Olive]There is not anything in your inventory[/]");
             }
             else
                 AnsiConsole.MarkupLine($"You looked into the inventory and see a [blue]{string.Join(",", world.Inventory.Items)}[/]");

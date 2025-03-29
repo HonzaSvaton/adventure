@@ -19,11 +19,14 @@ namespace Adventure
             var corridor = new Corridor();
             var dungeon = new Dungeon();
             var inferno = new Inferno();
+            var library = new Library();
             
             lobby.RegisterNeighbour(corridor);
             corridor.RegisterNeighbour(lobby);
             corridor.RegisterNeighbour(inferno);
             inferno.RegisterNeighbour(corridor);
+            lobby.RegisterNeighbour(library);
+            library.RegisterNeighbour(lobby);
 
             CurrentRoom = lobby;
         }
@@ -31,7 +34,7 @@ namespace Adventure
         {
             if (room.Locked)
             {
-                AnsiConsole.MarkupLine($"[red]You can not enter this room[/]");
+                AnsiConsole.MarkupLine($"[red]This room is locked you need a Key to unlock it[/]");
                 return false;
             }
             CurrentRoom = room;

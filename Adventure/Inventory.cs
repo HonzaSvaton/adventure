@@ -26,7 +26,7 @@ namespace Adventure
         {
             Items.Remove(item);
         }
-        public int MaxCapacity => 50;
+        public int MaxCapacity => 100;
 
     }
 }
