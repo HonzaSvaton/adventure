@@ -12,7 +12,7 @@ namespace Adventure.Rooms
         public override string Name => "Corridor";
 
         public override string Description => "dark and empty corridor";
-        public override bool Locked => true;
+        public override bool Locked => false;
 
         public Corridor()
         {

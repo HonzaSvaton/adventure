@@ -26,7 +26,7 @@ namespace Adventure.Rooms
         }
         public void Removeitem(BaseItem item)
         {
-        Items. Remove(item);
+            Items.Remove(item);
         }
         public override string ToString()
         {

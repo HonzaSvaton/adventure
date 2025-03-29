@@ -12,6 +12,6 @@ namespace Adventure.Items
 
         public override string Description => "Very dull, very heavy rock";
 
-        public override int Weight => 30;
+        public override int Weight => 300;
     }
 }

@@ -12,6 +12,6 @@ namespace Adventure.Items
 
         public override string Description => "Long very sharp sword made from solid metal";
         
-        public override int Weight  => 10;
+        public override int Weight  => 35;
     }
 }

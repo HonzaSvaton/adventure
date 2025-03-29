@@ -18,9 +18,12 @@ namespace Adventure
             var lobby = new Lobby();
             var corridor = new Corridor();
             var dungeon = new Dungeon();
-
+            var inferno = new Inferno();
+            
             lobby.RegisterNeighbour(corridor);
             corridor.RegisterNeighbour(lobby);
+            corridor.RegisterNeighbour(inferno);
+            inferno.RegisterNeighbour(corridor);
 
             CurrentRoom = lobby;
         }
