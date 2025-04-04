@@ -13,7 +13,7 @@ namespace Adventure.Rooms
 
         public override string Name => "Inferno";
 
-        public override bool Locked => false;
+        public override bool Locked { get; set; } = false;
 
         public Inferno()
         {

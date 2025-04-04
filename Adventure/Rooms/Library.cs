@@ -11,7 +11,7 @@ namespace Adventure.Rooms
     {
         public override string Name => "Library";
         public override string Description => "an old library, there are thousand of books covered in cobwebs";
-        public override bool Locked => false;
+        public override bool Locked { get; set; } = false;
 
         public Library()
         {
