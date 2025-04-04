@@ -10,9 +10,18 @@ namespace Adventure.Items
     {
         public override string Name => "Key";
 
-        public override string Description => "An old looking key with a an emerald in the middle";
+        public override string Description => "An old looking key with an emerald in the middle";
 
         public override int Weight => 2;
+
+        public override Usability IsUsable { get; } = Usability.Inv;
+
+        public override void Use (World world)
+        {
+            var room = world.CurrentRoom.Neighbours.
+                Find(r => r.Name == "Corridor");
+            room.Locked = false;
+        }
 
     }
 }
