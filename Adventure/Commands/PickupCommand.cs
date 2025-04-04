@@ -26,7 +26,7 @@ namespace Adventure.Commands
             var result=world.Inventory.Additem(item);
             if (result)
             {
-                AnsiConsole.MarkupLine($"[gold1]You have picked up a {item.Name}[/]");
+                AnsiConsole.MarkupLine($"[gold1]You have picked up a {item.Name}[/]"); //kk
             }
            
          
