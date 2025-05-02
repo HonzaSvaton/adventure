@@ -20,6 +20,7 @@ namespace Adventure.Commands
             AnsiConsole.WriteLine("test - types test in red");
             AnsiConsole.WriteLine("pickup - picksup an item");
             AnsiConsole.WriteLine("inventory - you check your inventory");
+            AnsiConsole.WriteLine("use - you use an item");
         }
     }
 }

@@ -12,6 +12,7 @@ var commands = new Dictionary<string, BaseCommand>()
     { "go", new GoCommand()},
     {"pickup", new PickupCommand() },
     {"inventory", new InventoryCommand() },
+    {"use", new UseCommand() },
 };
 
 AnsiConsole.MarkupLine(world.Intro);
